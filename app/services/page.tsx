@@ -1,5 +1,4 @@
 import PageHero from '@/components/shared/PageHero';
-import StatsBanner from '@/components/shared/StatsBanner';
 import CTABanner from '@/components/shared/CTABanner';
 import ServicesGrid from '@/components/services/ServicesGrid';
 import { COLORS, FONTS } from '@/lib/constants';
@@ -16,32 +15,54 @@ export default function ServicesPage() {
     <main>
       <PageHero eyebrow="WHAT WE DO" titleLine1="Every Service" titleLine2="" titleAccent="You Need." subtitle="From ground-up custom builds to bathroom transformations — one crew, one call." breadcrumb={[{label:'Home',href:'/'},{label:'Services',href:'/services'}]} />
 
-      {/* Services grid — landing page card style */}
-      <section style={{ backgroundColor: COLORS.plaster, padding: '80px 80px' }}>
-        <ServicesGrid services={services} />
-        <div style={{ width: '100%', height: 10, marginTop: 0, background: 'linear-gradient(90deg, #7B5C3A 0%, #5A3E25 50%, #7B5C3A 100%)' }} />
-      </section>
-
-      {/* Why NWS — landing page dark section */}
+      {/* Services section — landing page dark pattern */}
       <section style={{ backgroundColor: COLORS.espresso, padding: '80px 80px', position: 'relative', overflow: 'hidden' }}>
-        <svg style={{ position: 'absolute', top: 40, right: 40, width: 200, height: 200, opacity: 0.06, pointerEvents: 'none' }} viewBox="0 0 200 200" fill="none">
-          <path d="M100 15L15 85V185H185V85L100 15Z" stroke="white" strokeWidth="1.5"/>
-          <rect x="80" y="115" width="40" height="70" stroke="white" strokeWidth="1"/>
+        {/* Blueprint watermark */}
+        <svg style={{ position: 'absolute', top: 40, right: 40, width: 220, height: 220, opacity: 0.05, pointerEvents: 'none' }} viewBox="0 0 220 220" fill="none">
+          <path d="M110 20L20 85V200H200V85L110 20Z" stroke="white" strokeWidth="1.5"/>
+          <rect x="88" y="125" width="44" height="75" stroke="white" strokeWidth="1"/>
         </svg>
-        <div style={{ position: 'relative', zIndex: 1, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
-          <h2 style={{ fontFamily: FONTS.serif, fontSize: 'clamp(40px, 3.5vw, 56px)', color: COLORS.white, lineHeight: 1.05 }}>Why Homeowners <span style={{ fontStyle: 'italic', color: COLORS.terracotta }}>Choose NWS</span></h2>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-            {['Every trade in-house','Fixed-price before start','Single project manager','No subcontractor roulette'].map((item, i) => (
-              <div key={i} style={{ backgroundColor: 'rgba(255,255,255,0.05)', borderRadius: 16, padding: '20px 24px', display: 'flex', alignItems: 'center', gap: 12 }}>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke={COLORS.terracotta} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                <span style={{ fontFamily: FONTS.sans, fontSize: 14, color: COLORS.sage }}>{item}</span>
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          {/* Section header — matching landing page ServicesSection */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'start', marginBottom: 48 }}>
+            <div>
+              <p style={{ fontFamily: FONTS.sans, fontSize: 11, color: COLORS.terracotta, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 16 }}>
+                WHAT WE BUILD
+              </p>
+              <h2 style={{ fontFamily: FONTS.serif, fontSize: 'clamp(40px, 3.5vw, 64px)', color: COLORS.white, lineHeight: 1.05 }}>
+                One Team. Every Trade.<br />Zero Chaos.
+              </h2>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'flex-end', paddingBottom: 8 }}>
+              <p style={{ fontFamily: FONTS.sans, fontSize: 16, color: COLORS.sage, maxWidth: 400, lineHeight: 1.7 }}>
+                From first sketch to final walkthrough, one accountable crew handles design, permits, and construction.
+              </p>
+            </div>
+          </div>
+
+          {/* Cards grid */}
+          <ServicesGrid services={services} />
+
+          {/* Wood texture strip — landing page pattern */}
+          <div style={{ width: '100%', height: 10, marginTop: 0, background: 'linear-gradient(90deg, #7B5C3A 0%, #5A3E25 50%, #7B5C3A 100%)' }} />
+
+          {/* Stats bar — matching landing page pattern */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', borderTop: '1px solid rgba(255,255,255,0.1)', marginTop: 0 }}>
+            {[
+              { value: '500+', label: 'Projects Completed' },
+              { value: '19', label: 'Years in Business' },
+              { value: '9', label: 'Cities Served' },
+              { value: '4.9★', label: 'Google Average' },
+            ].map((stat, i) => (
+              <div key={stat.label} style={{ padding: '48px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
+                <span style={{ fontFamily: FONTS.serif, fontSize: 'clamp(40px, 4vw, 64px)', color: COLORS.white, lineHeight: 1 }}>{stat.value}</span>
+                <span style={{ fontFamily: FONTS.sans, fontSize: 11, color: COLORS.sage, textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: 12 }}>{stat.label}</span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <StatsBanner />
       <CTABanner heading="One Call. Every Trade." body="Tell us what you need — we handle everything from first sketch to final walkthrough." primaryLabel="Get a Free Quote" primaryHref="/contact" />
     </main>
   );
