@@ -15,7 +15,7 @@ export default function FAQsPage() {
   return (
     <main>
       <PageHero eyebrow="FAQ" titleLine1="Got" titleLine2="" titleAccent="Questions?" subtitle="Everything you need to know before starting your project." breadcrumb={[{label:'Home',href:'/'},{label:'FAQs',href:'/faqs'}]} />
-      <section style={{ backgroundColor: COLORS.plaster, padding: '80px 80px', maxWidth: 800, margin: '0 auto' }}>
+      <section style={{ backgroundColor: COLORS.plaster, padding: '80px 80px', maxWidth: 860, margin: '0 auto' }}>
         {categories.map(cat => (
           <div key={cat} style={{ marginBottom: 48 }}>
             <p style={{ fontFamily: FONTS.sans, fontSize: 11, color: COLORS.terracotta, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 16 }}>{cat}</p>
