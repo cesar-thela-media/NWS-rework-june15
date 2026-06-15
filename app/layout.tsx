@@ -1,26 +1,13 @@
 import type { Metadata } from "next";
-import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-dm-sans",
-  display: "swap",
-});
+import NavBar from "@/components/shared/NavBar";
+import Footer from "@/components/shared/Footer";
+import BackToTop from "@/components/shared/BackToTop";
 
 export const metadata: Metadata = {
-  title: "NWS Custom Homes | Luxury Custom Home Builder Richmond, Katy & Sugar Land",
+  title: "NWS Custom Homes | Built for the Way You Live",
   description:
-    "Custom homes and whole-home remodels across Richmond, Katy & Sugar Land — crafted since 2007. Free consultation available.",
+    "Custom homes and whole-home remodels across Richmond, Katy & Sugar Land — crafted since 2007.",
 };
 
 export default function RootLayout({
@@ -30,8 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfairDisplay.variable} ${dmSans.variable} font-sans bg-plaster text-espresso antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+      </head>
+      <body className="font-sans bg-plaster text-espresso antialiased">
+        <NavBar />
         {children}
+        <Footer />
+        <BackToTop />
       </body>
     </html>
   );
