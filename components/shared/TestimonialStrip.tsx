@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 import { COLORS, FONTS } from '@/lib/constants';
 import type { Testimonial } from '@/lib/types';
 
@@ -25,7 +24,6 @@ function GoogleIcon() {
 }
 
 export default function TestimonialStrip({ testimonials, eyebrow = 'WORD TRAVELS', heading = 'Our Clients Do the Talking.' }: TestimonialStripProps) {
-  const [submitted, setSubmitted] = useState(false);
 
   return (
     <section style={{ backgroundColor: COLORS.plaster, padding: '80px 80px' }}>
@@ -62,24 +60,32 @@ export default function TestimonialStrip({ testimonials, eyebrow = 'WORD TRAVELS
             <p style={{ fontFamily: FONTS.sans, fontSize: 11, color: COLORS.terracotta, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 20 }}>FREE CONSULTATION</p>
             <h3 style={{ fontFamily: FONTS.serif, fontSize: 'clamp(28px, 3vw, 40px)', color: COLORS.white, lineHeight: 1.1, marginBottom: 12 }}>Let&apos;s Walk Your<br />Floor Plan.</h3>
             <p style={{ fontFamily: FONTS.sans, fontSize: 14, color: COLORS.sage, marginBottom: 28, lineHeight: 1.6 }}>Free on-site consultation — and 5% off when you mention the website.</p>
-            {submitted ? (
-              <p style={{ fontFamily: FONTS.sans, fontSize: 14, color: COLORS.terracotta, textAlign: 'center', padding: 24 }}>Thank you! We&apos;ll be in touch within 1 business day.</p>
-            ) : (
-              <div>
-                <div style={{ borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: 12, marginBottom: 24 }}>
-                  <input type="text" placeholder="Your Name" style={{ width: '100%', background: 'transparent', border: 'none', outline: 'none', fontFamily: FONTS.sans, fontSize: 15, color: COLORS.white }} />
-                </div>
-                <div style={{ borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: 12, marginBottom: 24 }}>
-                  <input type="tel" placeholder="Your Phone" style={{ width: '100%', background: 'transparent', border: 'none', outline: 'none', fontFamily: FONTS.sans, fontSize: 15, color: COLORS.white }} />
-                </div>
-                <div style={{ border: '1px solid rgba(255,255,255,0.15)', borderRadius: 16, padding: '14px 20px', marginBottom: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontFamily: FONTS.sans, fontSize: 14, color: COLORS.sage }}>Service Needed</span>
-                  <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke={COLORS.sage} strokeWidth="1.5"><path d="M1 1.5L6 6.5L11 1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                </div>
-                <button onClick={() => setSubmitted(true)} style={{ width: '100%', backgroundColor: COLORS.terracotta, color: COLORS.white, fontFamily: FONTS.sans, fontSize: 15, fontWeight: 600, padding: 18, borderRadius: 9999, border: 'none', cursor: 'pointer' }}>Book My Consultation</button>
-                <p style={{ fontFamily: FONTS.sans, fontSize: 11, color: COLORS.sage, textAlign: 'center', marginTop: 20 }}>Mon–Fri 8–6 &nbsp;· &nbsp;Sat 8–12 &nbsp;· &nbsp;Richmond, TX</p>
+            <form action="/contact" method="GET">
+              <div style={{ borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: 12, marginBottom: 24 }}>
+                <input name="name" type="text" placeholder="Your Name" style={{ width: '100%', background: 'transparent', border: 'none', outline: 'none', fontFamily: FONTS.sans, fontSize: 15, color: COLORS.white }} />
               </div>
-            )}
+              <div style={{ borderBottom: '1px solid rgba(255,255,255,0.15)', paddingBottom: 12, marginBottom: 24 }}>
+                <input name="phone" type="tel" placeholder="Your Phone" style={{ width: '100%', background: 'transparent', border: 'none', outline: 'none', fontFamily: FONTS.sans, fontSize: 15, color: COLORS.white }} />
+              </div>
+              <div style={{ position: 'relative', marginBottom: 24 }}>
+                <select name="service" defaultValue="" style={{ width: '100%', background: 'transparent', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 16, padding: '14px 20px', fontFamily: FONTS.sans, fontSize: 14, color: COLORS.sage, cursor: 'pointer', appearance: 'none', outline: 'none' }}>
+                  <option value="" disabled>Service Needed</option>
+                  <option value="custom-home-building">Custom Home Building</option>
+                  <option value="kitchen-remodeling">Kitchen Remodeling</option>
+                  <option value="bathroom-remodeling">Bathroom Remodeling</option>
+                  <option value="whole-home-remodeling">Whole Home Remodeling</option>
+                  <option value="room-additions">Room Additions</option>
+                  <option value="shower-remodel">Shower Remodel</option>
+                  <option value="bathtub-remodel">Bathtub Remodel</option>
+                  <option value="basement-remodeling">Basement Finishing</option>
+                  <option value="garage-conversions">Garage Conversions</option>
+                  <option value="open-concept">Open Concept</option>
+                </select>
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke={COLORS.sage} strokeWidth="1.5" style={{ position: 'absolute', right: 20, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}><path d="M1 1.5L6 6.5L11 1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <button type="submit" style={{ width: '100%', backgroundColor: COLORS.terracotta, color: COLORS.white, fontFamily: FONTS.sans, fontSize: 15, fontWeight: 600, padding: 18, borderRadius: 9999, border: 'none', cursor: 'pointer' }}>Book My Consultation</button>
+              <p style={{ fontFamily: FONTS.sans, fontSize: 11, color: COLORS.sage, textAlign: 'center', marginTop: 20 }}>Mon–Fri 8–6 &nbsp;· &nbsp;Sat 8–12 &nbsp;· &nbsp;Richmond, TX</p>
+            </form>
           </div>
         </div>
       </div>

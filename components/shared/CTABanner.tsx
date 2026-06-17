@@ -23,7 +23,7 @@ export default function CTABanner({ eyebrow = 'START YOUR PROJECT', heading, bod
           <rect x="185" y="140" width="45" height="45" fill="none" stroke="white" strokeWidth="1"/>
         </svg>
 
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: 560, margin: '0 auto', textAlign: 'center' }}>
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
           <p style={{ fontFamily: FONTS.sans, fontSize: 11, color: COLORS.terracotta, textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 24 }}>{eyebrow}</p>
           <h2 style={{ fontFamily: FONTS.serif, fontSize: 'clamp(40px, 4vw, 64px)', color: COLORS.white, lineHeight: 1.05, marginBottom: 20 }}>{heading}</h2>
           <p style={{ fontFamily: FONTS.sans, fontSize: 16, color: COLORS.sage, lineHeight: 1.6, marginBottom: 44 }}>{body}</p>

@@ -6,10 +6,17 @@ export interface Service {
   heroSubtitle: string;
   intro: string[];
   includes: string[];
+  includeGroups?: { label: string; items: string[] }[];
   processSteps: string[];
+  processDescriptions?: string[];
   relatedSlugs: string[];
   iconType: string;
   cardDescription: string;
+  heroImage: string;
+  heroVariant?: 'dark';
+  galleryImages?: string[];
+  byTheNumbers: { value: string; label: string }[];
+  beforeAfter?: { before: string; after: string };
 }
 
 export interface Testimonial {
@@ -45,4 +52,5 @@ export interface GalleryItem {
   title: string;
   area: string;
   aspectRatio: '4/3' | '3/4' | '1/1';
+  image: string;
 }

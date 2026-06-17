@@ -25,6 +25,17 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# playwright dev artifacts
+.playwright-mcp/
+
+# dev screenshots
+*.jpeg
+*.png
+
+# internal docs not for repo
+PRD/
+nws-full-frontend-PRD.md
+
 # local env files
 .env*.local
 
