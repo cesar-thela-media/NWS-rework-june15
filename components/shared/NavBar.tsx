@@ -169,12 +169,17 @@ export default function NavBar() {
       }}>
 
         {/* Logo */}
-        <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0 }}>
-          <img
-            src="/nws-logo.png"
-            alt="NWS Custom Homes"
-            style={{ height: isMobile ? 36 : 46, width: 'auto', display: 'block' }}
-          />
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0, gap: 8 }}>
+          {/* NWS diamond mark */}
+          <svg width={isMobile ? 28 : 34} height={isMobile ? 28 : 34} viewBox="0 0 34 34" fill="none">
+            <rect x="17" y="1" width="22" height="22" rx="2" transform="rotate(45 17 1)" fill={COLORS.terracotta} />
+            <text x="17" y="21" textAnchor="middle" fontFamily="var(--font-playfair), Georgia, serif" fontSize="11" fontWeight="700" fill={COLORS.white} letterSpacing="0.5">NWS</text>
+          </svg>
+          {/* Wordmark */}
+          <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+            <span style={{ fontFamily: FONTS.serif, fontSize: isMobile ? 14 : 17, fontWeight: 700, color: COLORS.espresso, letterSpacing: '0.04em' }}>NWS</span>
+            <span style={{ fontFamily: FONTS.sans, fontSize: isMobile ? 8 : 9, fontWeight: 500, color: COLORS.sage, textTransform: 'uppercase', letterSpacing: '0.18em' }}>Custom Homes</span>
+          </span>
         </Link>
 
         {/* Desktop nav — absolutely centered so it's immune to logo/CTA width asymmetry */}
@@ -307,8 +312,15 @@ export default function NavBar() {
         <div style={{ position: 'fixed', inset: 0, zIndex: 200, backgroundColor: COLORS.white, overflowY: 'auto' }}>
           {/* Mobile menu header */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 20px 0' }}>
-            <Link href="/" onClick={() => setMobileOpen(false)} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-              <img src="/nws-logo.png" alt="NWS Custom Homes" style={{ height: 36, width: 'auto', display: 'block' }} />
+            <Link href="/" onClick={() => setMobileOpen(false)} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', gap: 8 }}>
+              <svg width="28" height="28" viewBox="0 0 34 34" fill="none">
+                <rect x="17" y="1" width="22" height="22" rx="2" transform="rotate(45 17 1)" fill={COLORS.terracotta} />
+                <text x="17" y="21" textAnchor="middle" fontFamily="var(--font-playfair), Georgia, serif" fontSize="11" fontWeight="700" fill={COLORS.white} letterSpacing="0.5">NWS</text>
+              </svg>
+              <span style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+                <span style={{ fontFamily: FONTS.serif, fontSize: 14, fontWeight: 700, color: COLORS.espresso, letterSpacing: '0.04em' }}>NWS</span>
+                <span style={{ fontFamily: FONTS.sans, fontSize: 8, fontWeight: 500, color: COLORS.sage, textTransform: 'uppercase', letterSpacing: '0.18em' }}>Custom Homes</span>
+              </span>
             </Link>
             <button
               onClick={() => setMobileOpen(false)}
