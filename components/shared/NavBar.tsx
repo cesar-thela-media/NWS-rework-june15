@@ -154,7 +154,6 @@ export default function NavBar() {
         borderBottom: '1px solid rgba(154,154,140,0.15)',
         height: 72, display: 'flex', alignItems: 'center',
         padding: isMobile ? '0 20px' : '0 80px',
-        justifyContent: 'space-between',
       }}>
 
         {/* Logo */}
@@ -170,7 +169,7 @@ export default function NavBar() {
 
         {/* Desktop nav links — hidden on mobile */}
         {!isMobile && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: 36, margin: '0 auto', position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: 36 }}>
             <div
               style={{ position: 'relative', paddingBottom: 16 }}
               onMouseEnter={() => setOpenMenu('services')}
@@ -222,7 +221,7 @@ export default function NavBar() {
         )}
 
         {/* Right side */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 12 : 20, flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 12 : 20, flexShrink: 0, marginLeft: 'auto' }}>
           {!isMobile && (
             <>
               <Link
