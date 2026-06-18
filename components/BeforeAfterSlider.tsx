@@ -33,7 +33,7 @@ export default function BeforeAfterSlider({ beforeSrc = DEFAULT_BEFORE, afterSrc
   }, []);
 
   return (
-    <img-comparison-slider value="50" class="w-full h-full block">
+    <img-comparison-slider value="50" style={{ width: '100%', height: '100%', display: 'block' }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         slot="first"
