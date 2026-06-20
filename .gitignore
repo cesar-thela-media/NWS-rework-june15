@@ -28,6 +28,9 @@ yarn-error.log*
 # playwright dev artifacts
 .playwright-mcp/
 
+# cesar notes
+/cesar-notes
+
 # dev screenshots
 *.jpeg
 *.png
