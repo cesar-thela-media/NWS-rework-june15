@@ -37,6 +37,7 @@ export interface Area {
   isPrimary?: boolean;
   tagline: string;
   description: string;
+  image?: string;
 }
 
 export interface FAQ {

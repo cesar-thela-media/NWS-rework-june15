@@ -144,99 +144,6 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         )}
       </section>
 
-      {/* ── What's Included: grouped checklist on dark ── */}
-      <section
-        className="rsp-pad"
-        style={{
-          backgroundColor: COLORS.espresso,
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
-
-        <div style={{ position: 'relative', zIndex: 1 }}>
-          <p style={{ fontFamily: FONTS.sans, fontSize: 11, color: COLORS.terracotta, textTransform: 'uppercase', letterSpacing: '0.18em', marginBottom: 12 }}>
-            SCOPE OF WORK
-          </p>
-          <h2
-            style={{
-              fontFamily: FONTS.serif,
-              fontSize: 'clamp(28px, 3vw, 42px)',
-              color: COLORS.white,
-              marginBottom: 56,
-            }}
-          >
-            What&apos;s <span style={{ fontStyle: 'italic', color: COLORS.terracotta }}>Included.</span>
-          </h2>
-
-          {groups.length > 0 ? (
-            <div className="included-grid">
-              {groups.map((group) => (
-                <div
-                  key={group.label}
-                  style={{
-                    backgroundColor: 'rgba(255,255,255,0.05)',
-                    borderRadius: 20,
-                    padding: '32px 28px',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                  }}
-                >
-                  <p
-                    style={{
-                      fontFamily: FONTS.sans,
-                      fontSize: 10,
-                      color: COLORS.terracotta,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.2em',
-                      marginBottom: 20,
-                      fontWeight: 700,
-                    }}
-                  >
-                    {group.label}
-                  </p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
-                    {group.items.map((item) => (
-                      <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-                        <div
-                          style={{
-                            width: 20,
-                            height: 20,
-                            borderRadius: '50%',
-                            backgroundColor: 'rgba(181,85,45,0.15)',
-                            border: `1px solid ${COLORS.terracotta}`,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            flexShrink: 0,
-                            marginTop: 1,
-                          }}
-                        >
-                          <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
-                            <path d="M1 4l2.5 2.5L9 1" stroke={COLORS.terracotta} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </div>
-                        <span style={{ fontFamily: FONTS.sans, fontSize: 14, color: COLORS.sage, lineHeight: 1.45 }}>{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-              {service.includes.map((item) => (
-                <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 7l3 3 7-7" stroke={COLORS.terracotta} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  <span style={{ fontFamily: FONTS.sans, fontSize: 14, color: COLORS.sage }}>{item}</span>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
       {/* ── Before / After slider (only if service has before/after images) ── */}
       {service.beforeAfter && (
         <section className="rsp-pad" style={{ backgroundColor: COLORS.plaster }}>
@@ -400,6 +307,99 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── What's Included: grouped checklist on dark ── */}
+      <section
+        className="rsp-pad"
+        style={{
+          backgroundColor: COLORS.espresso,
+          position: 'relative',
+          overflow: 'hidden',
+        }}
+      >
+
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <p style={{ fontFamily: FONTS.sans, fontSize: 11, color: COLORS.terracotta, textTransform: 'uppercase', letterSpacing: '0.18em', marginBottom: 12 }}>
+            SCOPE OF WORK
+          </p>
+          <h2
+            style={{
+              fontFamily: FONTS.serif,
+              fontSize: 'clamp(28px, 3vw, 42px)',
+              color: COLORS.white,
+              marginBottom: 56,
+            }}
+          >
+            What&apos;s <span style={{ fontStyle: 'italic', color: COLORS.terracotta }}>Included.</span>
+          </h2>
+
+          {groups.length > 0 ? (
+            <div className="included-grid">
+              {groups.map((group) => (
+                <div
+                  key={group.label}
+                  style={{
+                    backgroundColor: 'rgba(255,255,255,0.05)',
+                    borderRadius: 20,
+                    padding: '32px 28px',
+                    border: '1px solid rgba(255,255,255,0.07)',
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: FONTS.sans,
+                      fontSize: 10,
+                      color: COLORS.terracotta,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.2em',
+                      marginBottom: 20,
+                      fontWeight: 700,
+                    }}
+                  >
+                    {group.label}
+                  </p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                    {group.items.map((item) => (
+                      <div key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                        <div
+                          style={{
+                            width: 20,
+                            height: 20,
+                            borderRadius: '50%',
+                            backgroundColor: 'rgba(181,85,45,0.15)',
+                            border: `1px solid ${COLORS.terracotta}`,
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            flexShrink: 0,
+                            marginTop: 1,
+                          }}
+                        >
+                          <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                            <path d="M1 4l2.5 2.5L9 1" stroke={COLORS.terracotta} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                        <span style={{ fontFamily: FONTS.sans, fontSize: 14, color: COLORS.sage, lineHeight: 1.45 }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
+              {service.includes.map((item) => (
+                <div key={item} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7l3 3 7-7" stroke={COLORS.terracotta} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span style={{ fontFamily: FONTS.sans, fontSize: 14, color: COLORS.sage }}>{item}</span>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

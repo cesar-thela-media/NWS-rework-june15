@@ -74,6 +74,19 @@ export default function CityCards({ areas }: { areas: Area[] }) {
               }}
             />
 
+            {/* City image */}
+            {area.image && (
+              <div style={{
+                width: '100%', height: 140, borderRadius: 12,
+                overflow: 'hidden', marginBottom: 20,
+                backgroundColor: COLORS.placeholder,
+              }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={area.image} alt={area.label}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              </div>
+            )}
+
             {/* Project count badge */}
             <div
               style={{
