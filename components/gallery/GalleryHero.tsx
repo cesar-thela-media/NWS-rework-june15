@@ -157,7 +157,7 @@ export default function GalleryHero() {
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           gridTemplateRows: '1fr 1fr',
-          gap: 6,
+          gap: 12,
           overflow: 'hidden',
         }}
       >
@@ -167,6 +167,7 @@ export default function GalleryHero() {
             style={{
               position: 'relative',
               overflow: 'hidden',
+              borderRadius: 12,
               backgroundColor: COLORS.placeholder,
             }}
           >

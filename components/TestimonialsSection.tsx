@@ -42,7 +42,7 @@ function TestimonialCard({ quote, name, city, initial, featured, isMobile }: {
   return (
     <div
       style={{
-        backgroundColor: "white", borderRadius: "20px", padding: "24px",
+        backgroundColor: "white", borderRadius: "20px", padding: "32px 28px",
         display: "flex", flexDirection: "column",
         transform: (featured && !isMobile) ? "translateY(-16px)" : "none",
         boxShadow: featured ? "0 24px 64px rgba(43,33,24,0.16)" : "0 4px 24px rgba(43,33,24,0.07)",

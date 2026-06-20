@@ -149,21 +149,13 @@ export default function AreasPage() {
 
       {/* ── Don't see your city? ── */}
       <section
-        className="rsp-2col rsp-pad"
         style={{
           backgroundColor: COLORS.espresso,
-          alignItems: 'center',
-          position: 'relative',
-          overflow: 'hidden',
-          gap: 80,
+          padding: '80px 24px',
+          textAlign: 'center',
         }}
       >
-        <svg style={{ position: 'absolute', top: 40, right: 40, width: 160, height: 160, opacity: 0.05, pointerEvents: 'none' }} viewBox="0 0 160 160" fill="none">
-          <path d="M80 10L10 65V150H150V65L80 10Z" stroke="white" strokeWidth="1.5" />
-          <rect x="65" y="90" width="30" height="60" stroke="white" strokeWidth="1" />
-        </svg>
-
-        <div style={{ position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: 600, margin: '0 auto' }}>
           <h2
             style={{
               fontFamily: FONTS.serif,
@@ -187,23 +179,8 @@ export default function AreasPage() {
           >
             We serve the entire Greater Houston metro area. If you&apos;re in Fort Bend County or surrounding areas, give us a call. We likely serve you.
           </p>
-        </div>
 
-        <div style={{ position: 'relative', zIndex: 1 }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16, maxWidth: 360 }}>
-            {[
-              'Harris County',
-              'Fort Bend County',
-              'Brazoria County',
-              'Waller County',
-            ].map((county) => (
-              <div key={county} style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                <div style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: COLORS.terracotta, flexShrink: 0 }} />
-                <span style={{ fontFamily: FONTS.sans, fontSize: 15, color: 'rgba(255,255,255,0.7)' }}>{county}</span>
-              </div>
-            ))}
-          </div>
-          <div style={{ marginTop: 40, display: 'flex', gap: 16 }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: 16, marginTop: 40 }}>
             <a
               href={CONTACT.phoneHref}
               style={{
