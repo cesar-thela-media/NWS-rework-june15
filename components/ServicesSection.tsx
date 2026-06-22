@@ -197,7 +197,7 @@ const stats = [
   { value: "500+", label: "Projects" },
   { value: "19", label: "Years" },
   { value: "9", label: "Cities Served" },
-  { value: "5.0★", label: "Average" },
+  { value: "4.9★", label: "Average" },
 ];
 
 export default function ServicesSection() {

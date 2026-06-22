@@ -4,7 +4,7 @@ const stats = [
   { value: '500+', label: 'Projects Completed' },
   { value: '19',   label: 'Years in Business' },
   { value: '9',    label: 'Cities Served' },
-  { value: '5.0★', label: 'Google Average' },
+  { value: '4.9★', label: 'Google Average' },
 ];
 
 export default function StatsBanner() {

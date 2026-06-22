@@ -66,13 +66,15 @@ function TestimonialCard({ quote, name, city, initial, featured, isMobile }: {
       <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
         <div
           style={{
-            width: 36, height: 36, borderRadius: "50%", backgroundColor: "#2B2118",
+            width: 36, height: 36, borderRadius: "50%", backgroundColor: "#E8E2D9",
             display: "flex", alignItems: "center", justifyContent: "center",
-            fontFamily: "var(--font-playfair), Georgia, serif", fontSize: "14px",
-            color: "white", flexShrink: 0,
+            flexShrink: 0, overflow: 'hidden',
           }}
         >
-          {initial}
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="7" r="4" stroke="#2B2118" strokeWidth="1.5"/>
+            <path d="M3 18c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke="#2B2118" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
         </div>
         <div style={{ flex: 1 }}>
           <p style={{ fontFamily: "var(--font-dm-sans), system-ui, sans-serif", fontSize: "13px", color: "#2B2118", fontWeight: 600, lineHeight: 1.3, margin: 0 }}>{name}</p>

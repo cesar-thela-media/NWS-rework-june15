@@ -84,7 +84,7 @@ export default function ServicesPage() {
 
           {/* Inline stats */}
           <div className="inline-stats">
-            {[{ v: '500+', l: 'Projects' }, { v: '19', l: 'Years' }, { v: '5.0★', l: 'Avg Rating' }].map(s => (
+            {[{ v: '500+', l: 'Projects' }, { v: '19', l: 'Years' }, { v: '4.9★', l: 'Avg Rating' }].map(s => (
               <div key={s.l}>
                 <p style={{ fontFamily: FONTS.serif, fontSize: 30, color: COLORS.white, margin: 0, lineHeight: 1 }}>{s.v}</p>
                 <p style={{ fontFamily: FONTS.sans, fontSize: 11, color: COLORS.sage, textTransform: 'uppercase', letterSpacing: '0.12em', marginTop: 6 }}>{s.l}</p>
@@ -195,7 +195,7 @@ export default function ServicesPage() {
             { value: '500+', label: 'Projects Completed' },
             { value: '19',   label: 'Years in Business' },
             { value: '9',    label: 'Cities Served' },
-            { value: '5.0★', label: 'Google Average' },
+            { value: '4.9★', label: 'Google Average' },
           ].map((stat, i) => (
             <div key={stat.label} style={{ padding: '48px 0', display: 'flex', flexDirection: 'column', alignItems: 'center', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.07)' : 'none' }}>
               <span style={{ fontFamily: FONTS.serif, fontSize: 'clamp(40px, 4vw, 60px)', color: COLORS.white, lineHeight: 1 }}>{stat.value}</span>

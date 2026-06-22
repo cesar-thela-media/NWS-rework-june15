@@ -87,6 +87,15 @@ export default function AboutPage() {
                 >
                   {dotStyles.inner && <div style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: COLORS.terracotta }} />}
                 </div>
+                {/* Timeline image */}
+                <div style={{ width: '100%', height: 120, borderRadius: 12, overflow: 'hidden', marginBottom: 16, backgroundColor: COLORS.placeholder }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${NWS}/${['custom-homes-7.jpeg','kitchen-gallery-7.jpeg','bathroom-gallery-7.jpeg','remodeling-2.jpeg'][i]}`}
+                    alt={m.label}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                </div>
                 <p style={{ fontFamily: FONTS.serif, fontSize: 'clamp(28px, 2.5vw, 40px)', color: COLORS.terracotta, margin: '0 0 4px 0', lineHeight: 1 }}>
                   {m.year}
                 </p>

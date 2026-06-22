@@ -46,7 +46,7 @@ export default function Footer() {
                 <svg key={i} width="13" height="13" viewBox="0 0 13 13" fill={COLORS.terracotta}><path d="M6.5 1l1.3 3.7H11L8.3 6.8l1.1 3.7L6.5 8.3 3.6 10.5l1.1-3.7L2 4.7h3.2z"/></svg>
               ))}
             </div>
-            <span style={{ fontFamily: FONTS.sans, fontSize: 13, color: COLORS.white, fontWeight: 600 }}>5.0</span>
+            <span style={{ fontFamily: FONTS.sans, fontSize: 13, color: COLORS.white, fontWeight: 600 }}>4.9</span>
             <span style={{ fontFamily: FONTS.sans, fontSize: 12, color: COLORS.sage }}>Google Reviews</span>
             <a href="https://g.page/r/CRyZ8e5jvBiVEBM/review" target="_blank" rel="noopener noreferrer"
               style={{ fontFamily: FONTS.sans, fontSize: 12, color: COLORS.terracotta, textDecoration: 'none', fontWeight: 600 }}>
