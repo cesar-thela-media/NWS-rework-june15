@@ -36,8 +36,8 @@ function GoogleIcon() {
   );
 }
 
-function TestimonialCard({ quote, name, city, initial, featured, isMobile }: {
-  quote: string; name: string; city: string; initial: string; featured?: boolean; isMobile?: boolean;
+function TestimonialCard({ quote, name, city, featured, isMobile }: {
+  quote: string; name: string; city: string; featured?: boolean; isMobile?: boolean;
 }) {
   return (
     <div
